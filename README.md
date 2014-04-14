@@ -6,6 +6,8 @@ theme-bp
 - [Base Theme](http://github.com/torq/theme-bp#base-theme)
 - [Grid System](http://github.com/torq/theme-bp#grid-system)
 - [Style Organization](http://github.com/torq/theme-bp#style-organization)
+- [CSS Preprocessing](http://github.com/torq/theme-bp#css-preprocessing)
+- [Style Rules](http://github.com/torq/theme-bp#style-rules)
 
 ##Purpose
 We have a lot more bandwidth now, and browsers are better now, than 20 years ago. However, sites have gotten a lot more complicated than they were 20 years ago. So in some cases, the following guidelines may seem unnecessary. Even so, when theming a site, every little bit counts, so the following things should be kept in mind.
@@ -35,17 +37,17 @@ Drupal can be quite a challenge. And in most cases, you need to style elements t
 
 **Example: You need to apply a style to an ul, li, and an a tag for a particular view of articles. You may be tempted to write SASS like this:**
 
-`
-    .article-view {
-        /* view styles */
-        ul {
-            /* ul styles */
-            li {
-                /* li styles */
-                a {
-                /* a styles */
-                }
-            }
-        }
+```
+.article-view {
+  /* view styles */
+  ul {
+    /* ul styles */
+    li {
+      /* li styles */
+      a {
+        /* a styles */
+      }
     }
-`
+  }
+}
+```
