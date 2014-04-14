@@ -88,6 +88,42 @@ Though drupal.org style guidelines don’t consider css preprocessors very much,
 ##Template Files
 HMTL and your php variables go in the tpl files. Logic goes into preprocess and process functions that are located in the template.php file. The most important part of working with template files is being consistent with your mark up. If you’d like to clean up some of the standard drupal mark up, you can use the Fences module ( https://drupal.org/project/fences ) to provide a leaner structure.
 
+A good general rule is, if you can accomplish a task with a preprocessor function or adding a tpl file, go with the preprocessor function because it's more efficient. A example preprocessor function to add a class to a block title. Here's the source of my block when I view it using chrome dev tools.
+```
+<div id="block-block-1" class="block block-block first last odd">
+  <h2 class="block__title block-title">Head Block Demo</h2>
+  <p>some stuff</p>
+</div>
+```
+In this example, my theme name is `torq`, the block delta is 1, which I pull from the source (id=block-block-1). Here's my simple preprocessor:
+
+```
+/**
+ * Override or insert variables into the block templates.
+ *
+ * @param $variables
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("block" in this case.)
+ */
+
+function torq_preprocess_block(&$variables, $hook) {
+
+  $block = $variables['block'];
+
+  if ($block->delta == 1) {
+    $variables['title_attributes_array']['class'][] = 'awesome-class';
+  }
+}
+```
+This example results in:
+```
+<div id="block-block-1" class="block block-block first last odd">
+  <h2 class="block__title block-title awesome-class">Head Block Demo</h2>
+  <p>some stuff</p>
+</div>
+```
+
 Avoid using drupal_add_css() & drupal_add_js() in your template files (and custom modules). It’s better to work your styles into your theme. It can be tempting to use the conditional methods of adding css & js as a way to keep file sizes down on page loads. But it also causes Drupal to create multiple versions of the aggregated css & js. One file gets downloaded once and cached locally. In extreme cases, where drupal_add is being used a lot, drupal can create a new aggregate on nearly every page load. CSS & JS aggregate files are normally cached heavily by varnish. Creating new aggregates, however, circumvents the caching, and creates server load from not only having to continuously serve these files, but continuously creating these files.
 
 If the styles are added within the normal site styles, they are simply aggregated once, cached by varnish, downloaded on the first page load, and cached locally.
