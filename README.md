@@ -10,6 +10,7 @@ theme-bp
 - [Style Rules](http://github.com/torq/theme-bp#style-rules)
 - [Template Files](http://github.com/torq/theme-bp#template-files)
 - [Working with Javascript](http://github.com/torq/theme-bp#working-with-javascript)
+- [Links](http://github.com/torq/theme-bp#links)
 
 ##Purpose
 We have a lot more bandwidth now, and browsers are better now, than 20 years ago. However, sites have gotten a lot more complicated than they were 20 years ago. So in some cases, the following guidelines may seem unnecessary. Even so, when theming a site, every little bit counts, so the following things should be kept in mind.
@@ -119,3 +120,38 @@ For things that for some reason shouldn’t be inside of a drupal behavior it sh
   // your js here
 }(jQuery));
 ```
+
+
+
+
+
+##Links
+###Base Themes
+- [Zen5](https://drupal.org/project/zen)
+- [Basic](https://drupal.org/project/basic)
+
+###Grids
+- [Zen Grids](http://zengrids.com/help/)
+
+###Compass
+- [Compass](http://compass-style.org/)
+
+###CSS Performance
+- [Chrome - Optimize Browser Rendering](https://developers.google.com/speed/docs/best-practices/rendering)
+- [Mozilla - Writing Efficient CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)
+
+###Drupal Coding Standards
+- [CSS](https://drupal.org/node/1886770)
+- [JavaScript](https://drupal.org/node/172169)
+
+###Drupal Guides
+- [CSS](https://drupal.org/node/1886770)
+- [Template Suggestions](https://drupal.org/node/223440)
+- [Theme Hook Suggestions](https://drupal.org/node/1089656)
+- [Core Tpl Files](https://drupal.org/node/190815)
+
+###Helpful Drupal Modules
+- [Fences](https://drupal.org/project/fences)
+- [jQuery Update](https://drupal.org/project/jquery_update)
+- [Libraries API](https://drupal.org/project/libraries)
+- [Style Gide](https://drupal.org/project/styleguide)
