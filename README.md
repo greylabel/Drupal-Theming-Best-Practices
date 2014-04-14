@@ -36,16 +36,16 @@ Drupal can be quite a challenge. And in most cases, you need to style elements t
 **Example: You need to apply a style to an ul, li, and an a tag for a particular view of articles. You may be tempted to write SASS like this:**
 
 `
-.article-view {
-  /* view styles */
-  ul {
-  /* ul styles */
-    li {
-    /* li styles */
-      a {
-        /* a styles */
-      }
+    .article-view {
+        /* view styles */
+        ul {
+            /* ul styles */
+            li {
+                /* li styles */
+                a {
+                /* a styles */
+                }
+            }
+        }
     }
-  }
-}
 `
