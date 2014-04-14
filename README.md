@@ -95,7 +95,7 @@ A good general rule is, if you can accomplish a task with a preprocessor functio
   <p>some stuff</p>
 </div>
 ```
-In this example, my theme name is `torq`, the block delta is 1, which I pull from the source (id=block-block-1). Here's my simple preprocessor:
+In this example, my theme name is `torq`, the block delta is 1, which I pull from the source (`id=block-block-1`). Here's my simple preprocessor:
 
 ```
 /**
