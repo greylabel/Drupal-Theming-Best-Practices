@@ -26,7 +26,13 @@ When creating a theme you can be tempted to not use a grid system, or to create 
 ##Styles
 
 ### Style Organization
-When organizing styles, group styles based on the SMACSS ( http://smacss.com/ ) guidelines. If using a base theme like Zen 5 or Basic, the SASS directory is organized like this by default. Module Rules are renamed as Component Rules to not confuse themers. It is recommended to add media queries in the relevant component styles and not with the state style rules.
+When organizing styles, group styles based on the SMACSS ( http://smacss.com/ ) guidelines. If using a base theme like Zen 5 or Basic, the SASS directory is organized like this by default. Rules are broken up into 5 main areas.
+- **Base Rules** > Bases styles for HTML elements and normalization rules
+- **Layout Rules** > Styles setting up widths and placement of regions 
+- **Component Rules** > The majority of your rules. Should be in a partials directory. Partials should be semantically named for the component they apply to.
+- **State Rules** > These are often utility styles applied or toggled by javascript. Quicktabs, collapsible sections, show/hide.
+- **Theme Rules** > These are theme styles for things like page background, typography, colors, etc.
+Component rules are commonly referred to as *module rules* when discussing SMACSS, however, the term *module styles* means something completely different when dealing with Drupal. It is recommended to add media queries in the relevant component styles and not with the state style rules.
 
 *With SMACSS, the intent is to keep the styles that pertain to a specific component with the rest of the component. That means that instead of having a single break point, either in a main CSS file or in a separate media query style sheet, place media queries around the component states.*
 
