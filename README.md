@@ -9,6 +9,7 @@ theme-bp
 - [CSS Preprocessing](http://github.com/torq/theme-bp#css-preprocessing)
 - [Style Rules](http://github.com/torq/theme-bp#style-rules)
 - [Template Files](http://github.com/torq/theme-bp#template-files)
+- [Working with Javascript](http://github.com/torq/theme-bp#working-with-javascript)
 
 ##Purpose
 We have a lot more bandwidth now, and browsers are better now, than 20 years ago. However, sites have gotten a lot more complicated than they were 20 years ago. So in some cases, the following guidelines may seem unnecessary. Even so, when theming a site, every little bit counts, so the following things should be kept in mind.
@@ -94,3 +95,27 @@ If the styles are added within the normal site styles, they are simply aggregate
 Template Suggestions: https://drupal.org/node/223440
 Theme Hook Suggestions: https://drupal.org/node/1089656
 A list of the core tpl files can be found here: https://drupal.org/node/190815
+
+##Working with Javascript
+Working with javascript is more difficult than working with styles. Please review the javascript coding standards here: https://drupal.org/node/172169 which provides information on code structure (indeting, comments, etc.).
+
+It’s usually helpful to create a single site-wide javascript file in your js directory of your theme. Drupal includes jquery (version 1.4.4) in core that can be used. If you need a newer version of jquery then what it ships with, you can use the jQuery Update module ( https://drupal.org/project/jquery_update ). Using jQuery Update you have the ability to choose a different version of the jQuery library.
+
+When you need to utilize a third party javascript library or jQuery plugin, there are multiple ways to accomplish it. One way that seems easy is to simply add the plugin to your theme’s JS folder and add it to your theme’s .info file or using drupal_add_js() to include the plugin. However, the best way is to utilize a plugin or library is the libraries api ( https://drupal.org/project/libraries ). You can add the library and use a custom module to add the library to your site.
+
+Drupal Behaviors are Drupal’s way to fire javascript on document.ready and again after ajax calls. Most of the times, this is what you would want because of things being added to the DOM by ajax after the page is loaded.
+```
+Drupal.behaviors.yourCustomBehavior = {
+  attach: function (context, settings) {
+    $(‘#block-block-1’).click(function() {
+      // do something
+    });
+  }
+}
+```
+For things that for some reason shouldn’t be inside of a drupal behavior it should be wrapped in:
+```
+(function ($) {
+  // your js here
+}(jQuery));
+```
