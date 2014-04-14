@@ -8,6 +8,7 @@ theme-bp
 - [Style Organization](http://github.com/torq/theme-bp#style-organization)
 - [CSS Preprocessing](http://github.com/torq/theme-bp#css-preprocessing)
 - [Style Rules](http://github.com/torq/theme-bp#style-rules)
+- [Template Files](http://github.com/torq/theme-bp#template-files)
 
 ##Purpose
 We have a lot more bandwidth now, and browsers are better now, than 20 years ago. However, sites have gotten a lot more complicated than they were 20 years ago. So in some cases, the following guidelines may seem unnecessary. Even so, when theming a site, every little bit counts, so the following things should be kept in mind.
@@ -51,3 +52,45 @@ Drupal can be quite a challenge. And in most cases, you need to style elements t
   }
 }
 ```
+**The previous would compile to:**
+```
+.article-view {/* view styles */}
+.article-view ul {/* ul styles */}
+.article-view ul li {/* li styles */}
+.article-view ul li a {/* a styles */}
+```
+**A better way would be:**
+```
+.article-view {
+  /* view styles */
+  ul { */ ul styles */}
+  li { /* li styles */}
+  a {/* a styles */}
+}
+```
+**Which compiles to:**
+```
+.article-view {/* view styles */}
+.article-view ul {/* ul styles */}
+.article-view li {/* li styles */}
+.article-view a {/* a styles */}
+```
+If you look at the first set (the bad one) in the previous example, the last rule requires the browser match 4 items. Since a browser reads right to left, this is extremely inefficient. Nested tags is the most expensive rule in regards to front-end performance. If the HTML tags have classes, like a typical drupal site would, the most efficient rule would use those.
+
+For more information on CSS selector efficiency: https://developers.google.com/speed/docs/best-practices/rendering
+
+If you find yourself fighting a module’s, or drupal core’s default stylesheet and need to remove it’s css file, you should use a hook_css_alter() to unset the file in your template.php file in your theme directory.
+
+A great module that can be used to set up your theme’s generic styles is the style guide module ( https://drupal.org/project/styleguide ).
+
+Though drupal.org style guidelines don’t consider css preprocessors very much, and some information seems outdated, the css guidelines are worth reading. https://drupal.org/node/1886770
+
+##Template Files
+HMTL and your php variables go in the tpl files. Logic goes into preprocess and process functions that are located in the template.php file. The most important part of working with template files is being consistent with your mark up. If you’d like to clean up some of the standard drupal mark up, you can use the Fences module ( https://drupal.org/project/fences ) to provide a leaner structure.
+
+Avoid using drupal_add_css() & drupal_add_js() in your template files (and custom modules). It’s better to work your styles into your theme. It can be tempting to use the conditional methods of adding css & js as a way to keep file sizes down on page loads. But it also causes Drupal to create multiple versions of the aggregated css & js. One file gets downloaded once and cached locally. In extreme cases, where drupal_add is being used a lot, drupal can create a new aggregate on nearly every page load. CSS & JS aggregate files are normally cached heavily by varnish. Creating new aggregates, however, circumvents the caching, and creates server load from not only having to continuously serve these files, but continuously creating these files.
+
+If the styles are added within the normal site styles, they are simply aggregated once, cached by varnish, downloaded on the first page load, and cached locally.
+Template Suggestions: https://drupal.org/node/223440
+Theme Hook Suggestions: https://drupal.org/node/1089656
+A list of the core tpl files can be found here: https://drupal.org/node/190815
