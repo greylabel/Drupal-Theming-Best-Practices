@@ -149,6 +149,7 @@ For things that for some reason shouldn’t be inside of a drupal behavior it sh
 - [Template Suggestions](https://drupal.org/node/223440)
 - [Theme Hook Suggestions](https://drupal.org/node/1089656)
 - [Core Tpl Files](https://drupal.org/node/190815)
+- [Working with Javascript](https://drupal.org/node/121997)
 
 ###Helpful Drupal Modules
 - [Fences](https://drupal.org/project/fences)
