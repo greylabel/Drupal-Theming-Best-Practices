@@ -92,9 +92,9 @@ HMTL and your php variables go in the tpl files. Logic goes into preprocess and 
 Avoid using drupal_add_css() & drupal_add_js() in your template files (and custom modules). It’s better to work your styles into your theme. It can be tempting to use the conditional methods of adding css & js as a way to keep file sizes down on page loads. But it also causes Drupal to create multiple versions of the aggregated css & js. One file gets downloaded once and cached locally. In extreme cases, where drupal_add is being used a lot, drupal can create a new aggregate on nearly every page load. CSS & JS aggregate files are normally cached heavily by varnish. Creating new aggregates, however, circumvents the caching, and creates server load from not only having to continuously serve these files, but continuously creating these files.
 
 If the styles are added within the normal site styles, they are simply aggregated once, cached by varnish, downloaded on the first page load, and cached locally.
-Template Suggestions: https://drupal.org/node/223440
-Theme Hook Suggestions: https://drupal.org/node/1089656
-A list of the core tpl files can be found here: https://drupal.org/node/190815
+- Template Suggestions: https://drupal.org/node/223440
+- Theme Hook Suggestions: https://drupal.org/node/1089656
+- A list of the core tpl files can be found here: https://drupal.org/node/190815
 
 ##Working with Javascript
 Working with javascript is more difficult than working with styles. Please review the javascript coding standards here: https://drupal.org/node/172169 which provides information on code structure (indeting, comments, etc.).
