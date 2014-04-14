@@ -28,8 +28,6 @@ When organizing styles, group styles based on the SMACSS ( http://smacss.com/ ) 
 
 *With SMACSS, the intent is to keep the styles that pertain to a specific component with the rest of the component. That means that instead of having a single break point, either in a main CSS file or in a separate media query style sheet, place media queries around the component states.*
 
-http://www.acquia.com/blog/organize-your-styles-introduction-smacss
-
 ##CSS Preprocessing
 CSS preprocessors allow themers to be more efficient when developing a sub theme. We prefer SASS, using scss syntax, and using Compass. These are the Zen 5 defaults and work well. We recommend using Compass for creating sprites for your site using two sprite directories, one for standard resolution, one for retina resolutions.
 
@@ -126,9 +124,11 @@ For things that for some reason shouldn’t be inside of a drupal behavior it sh
 
 
 ##Links
-###Base Themes
+###Themes
 - [Zen5](https://drupal.org/project/zen)
 - [Basic](https://drupal.org/project/basic)
+- [SMACSS in themes](http://www.acquia.com/blog/organize-your-styles-introduction-smacss)
+- [SMACSS](http://smacss.com/)
 
 ###Grids
 - [Zen Grids](http://zengrids.com/help/)
@@ -145,7 +145,6 @@ For things that for some reason shouldn’t be inside of a drupal behavior it sh
 - [JavaScript](https://drupal.org/node/172169)
 
 ###Drupal Guides
-- [CSS](https://drupal.org/node/1886770)
 - [Template Suggestions](https://drupal.org/node/223440)
 - [Theme Hook Suggestions](https://drupal.org/node/1089656)
 - [Core Tpl Files](https://drupal.org/node/190815)
