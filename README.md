@@ -217,4 +217,4 @@ For things that for some reason shouldn’t be inside of a drupal behavior it sh
 - [Fences](https://drupal.org/project/fences)
 - [jQuery Update](https://drupal.org/project/jquery_update)
 - [Libraries API](https://drupal.org/project/libraries)
-- [Style Gide](https://drupal.org/project/styleguide)
+- [Style Guide](https://drupal.org/project/styleguide)
