@@ -8,6 +8,7 @@ theme-bp
 - [Style Organization](http://github.com/torq/theme-bp#style-organization)
 - [CSS Preprocessing](http://github.com/torq/theme-bp#css-preprocessing)
 - [Style Rules](http://github.com/torq/theme-bp#style-rules)
+- [Conditional CSS](http://github.com/torq/theme-bp#conditional-css)
 - [Template Files](http://github.com/torq/theme-bp#template-files)
 - [Working with Javascript](http://github.com/torq/theme-bp#working-with-javascript)
 - [Links](http://github.com/torq/theme-bp#links)
@@ -111,6 +112,22 @@ If you find yourself fighting a module’s, or drupal core’s default styleshee
 A great module that can be used to set up your theme’s generic styles is the style guide module ( https://drupal.org/project/styleguide ).
 
 Though drupal.org style guidelines don’t consider css preprocessors very much, and some information seems outdated, the css guidelines are worth reading. https://drupal.org/node/1886770
+
+##Conditional CSS
+If you're using the zen theme, or the [conditional styles module](https://drupal.org/project/conditional_styles) you can add conditional style sheets in your theme's .info file just like this:
+
+```
+stylesheets-conditional[lte IE 8][all][] = lte-ie-8.css
+```
+
+If you aren't, then you'll need to utilize a preprocessor in your template.php file in your theme's directory:
+```
+function YOURTHEME_preprocess_html(&$variables) {
+// Add conditional stylesheets for IE
+  drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/ie.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE), 'preprocess' => FALSE));
+  drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/ie9.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'IE 9', '!IE' => FALSE), 'preprocess' => FALSE));
+}
+```
 
 ##Template Files
 HMTL and your php variables go in the tpl files. Logic goes into preprocess and process functions that are located in the template.php file. The most important part of working with template files is being consistent with your mark up. If you’d like to clean up some of the standard drupal mark up, you can use the Fences module ( https://drupal.org/project/fences ) to provide a leaner structure.
