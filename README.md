@@ -32,6 +32,7 @@ When organizing styles, group styles based on the SMACSS ( http://smacss.com/ ) 
 - **Component Rules** > The majority of your rules. Should be in a partials directory. Partials should be semantically named for the component they apply to.
 - **State Rules** > These are often utility styles applied or toggled by javascript. Quicktabs, collapsible sections, show/hide.
 - **Theme Rules** > These are theme styles for things like page background, typography, colors, etc.
+
 Component rules are commonly referred to as *module rules* when discussing SMACSS, however, the term *module styles* means something completely different when dealing with Drupal. It is recommended to add media queries in the relevant component styles and not with the state style rules.
 
 *With SMACSS, the intent is to keep the styles that pertain to a specific component with the rest of the component. That means that instead of having a single break point, either in a main CSS file or in a separate media query style sheet, place media queries around the component states.*
