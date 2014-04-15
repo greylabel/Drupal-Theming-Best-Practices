@@ -124,8 +124,8 @@ If you aren't, then you'll need to utilize a preprocessor in your template.php f
 ```
 function YOURTHEME_preprocess_html(&$variables) {
 // Add conditional stylesheets for IE
-  drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/ie.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE), 'preprocess' => FALSE));
-  drupal_add_css(drupal_get_path('theme', 'MYTHEME') . '/css/ie9.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'IE 9', '!IE' => FALSE), 'preprocess' => FALSE));
+  drupal_add_css(path_to_theme() . '/css/ie.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE), 'preprocess' => FALSE));
+  drupal_add_css(path_to_theme() . '/css/ie9.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'IE 9', '!IE' => FALSE), 'preprocess' => FALSE));
 }
 ```
 
