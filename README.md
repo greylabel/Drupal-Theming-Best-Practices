@@ -1,5 +1,4 @@
-theme-bp
-========
+Drupal Theming Best Practices
 
 #TOC
 - [Purpose](http://github.com/torq/theme-bp#purpose)
