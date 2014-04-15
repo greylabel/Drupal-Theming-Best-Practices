@@ -1,16 +1,16 @@
 Drupal Theming Best Practices
 
 #TOC
-- [Purpose](http://github.com/torq/theme-bp#purpose)
-- [Base Theme](http://github.com/torq/theme-bp#base-theme)
-- [Grid System](http://github.com/torq/theme-bp#grid-system)
-- [Style Organization](http://github.com/torq/theme-bp#style-organization)
-- [CSS Preprocessing](http://github.com/torq/theme-bp#css-preprocessing)
-- [Style Rules](http://github.com/torq/theme-bp#style-rules)
-- [Conditional CSS](http://github.com/torq/theme-bp#conditional-css)
-- [Template Files](http://github.com/torq/theme-bp#template-files)
-- [Working with Javascript](http://github.com/torq/theme-bp#working-with-javascript)
-- [Links](http://github.com/torq/theme-bp#links)
+- [Purpose](http://github.com/torq/Drupal-Theming-Best-Practices#purpose)
+- [Base Theme](http://github.com/torq/Drupal-Theming-Best-Practices#base-theme)
+- [Grid System](http://github.com/torq/Drupal-Theming-Best-Practices#grid-system)
+- [Style Organization](http://github.com/torq/Drupal-Theming-Best-Practices#style-organization)
+- [CSS Preprocessing](http://github.com/torq/Drupal-Theming-Best-Practices#css-preprocessing)
+- [Style Rules](http://github.com/torq/Drupal-Theming-Best-Practices#style-rules)
+- [Conditional CSS](http://github.com/torq/Drupal-Theming-Best-Practices#conditional-css)
+- [Template Files](http://github.com/torq/Drupal-Theming-Best-Practices#template-files)
+- [Working with Javascript](http://github.com/torq/Drupal-Theming-Best-Practices#working-with-javascript)
+- [Links](http://github.com/torq/Drupal-Theming-Best-Practices#links)
 
 ##Purpose
 We have a lot more bandwidth now, and browsers are better now, than 20 years ago. However, sites have gotten a lot more complicated than they were 20 years ago. So in some cases, the following guidelines may seem unnecessary. Even so, when theming a site, every little bit counts, so the following things should be kept in mind.
