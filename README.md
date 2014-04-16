@@ -35,6 +35,37 @@ When organizing styles, group styles based on the SMACSS ( http://smacss.com/ ) 
 
 Component rules are commonly referred to as *module rules* when discussing SMACSS, however, the term *module styles* means something completely different when dealing with Drupal. It is recommended to add media queries in the relevant component styles and not with the state style rules.
 
+Example of a layout rule with media query.
+**CSS Version:**
+
+```
+#block-block-61 {
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+}
+
+@media screen and (max-width: 767px) {
+  #block-block-61 {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+```
+
+**SASS Version of the same rule**
+```
+#block-block-61 {
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+```
+
 *With SMACSS, the intent is to keep the styles that pertain to a specific component with the rest of the component. That means that instead of having a single break point, either in a main CSS file or in a separate media query style sheet, place media queries around the component states.*
 
 ###CSS Preprocessing
