@@ -38,7 +38,8 @@ Component rules are commonly referred to as *module rules* when discussing SMACS
 *With SMACSS, the intent is to keep the styles that pertain to a specific component with the rest of the component. That means that instead of having a single break point, either in a main CSS file or in a separate media query style sheet, place media queries around the component states.*
 
 Example rule with media query.
-**CSS Version:**
+
+**CSS Version**
 
 ```
 #block-block-61 {
