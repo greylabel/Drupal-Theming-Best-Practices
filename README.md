@@ -1,6 +1,6 @@
-Drupal Theming Best Practices
+#Drupal Theming Best Practices
 
-#TOC
+##TOC
 - [Purpose](http://github.com/torq/Drupal-Theming-Best-Practices#purpose)
 - [Base Theme](http://github.com/torq/Drupal-Theming-Best-Practices#base-theme)
 - [Grid System](http://github.com/torq/Drupal-Theming-Best-Practices#grid-system)
