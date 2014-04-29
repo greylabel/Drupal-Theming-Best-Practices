@@ -6,4 +6,3 @@ While tasks can be split up evenly, and discussions can take place about how bes
 
 - Selection of base theme
 - Set up of theme directory
-- 
