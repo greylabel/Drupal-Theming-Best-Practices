@@ -161,7 +161,7 @@ function YOURTHEME_preprocess_html(&$variables) {
 }
 ```
 ##Images
-Working with images isn't just a theme issue, but it's a problem that needs to be solved and is often overlooked, and left up to the themer to solve. At the time of this writing, the best solution for the image problem is the HTML5 picture element. The downside is, browser support is poor and requires javascript as a polyfill. 
+Working with images isn't just a theme issue, but it's a problem that needs to be solved and is often overlooked, and left up to the themer to solve. At the time of this writing, the best solution for the image problem is the HTML5 picture element. The downside is, browser support is poor and requires javascript as a polyfill. However, it does work for serving up multiple size and resolutions of an image based on screen size and pixel density and uses breakpoints and picture/image styles.
 - [Module](http://drupal.org/project/picture)
 - [Instructions](https://drupal.org/node/1902264)
 
