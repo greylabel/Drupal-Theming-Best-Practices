@@ -152,6 +152,8 @@ If you're using the zen theme, or the [conditional styles module](https://drupal
 stylesheets-conditional[lte IE 8][all][] = lte-ie-8.css
 ```
 
+**Note: Zen 5 no longer has the conditional stylesheet module built in. Instead, it adds classes to the HTML element to style against. You can, however, if you choose to, use the conditional stylesheet module.**
+
 If you aren't, then you'll need to utilize a preprocessor in your template.php file in your theme's directory:
 ```
 function YOURTHEME_preprocess_html(&$variables) {
